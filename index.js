@@ -85,6 +85,10 @@ moment.preciseDiff = function(d1, d2, opts) {
     result.push(moment.duration(secDiff,'second').humanize());
   }
 
+  if (secDiff && opts.fixed_second) {
+    result.push(secDiff + ' seconds')
+  }
+
   return result.join(' ');
 };
 
